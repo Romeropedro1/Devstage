@@ -2,7 +2,7 @@ import Image from 'next/image'
 import logo from '../../../assets/logo.svg'
 
 import { InviteLinkInput } from './invite-link-input'
-import { Ranking } from './ranking'
+import Ranking from './ranking'  // Como é um export default, importação sem chaves
 import { Stats } from './stats'
 
 interface InvitePageProps {

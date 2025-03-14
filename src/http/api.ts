@@ -50,13 +50,10 @@ export type GetSubscriberRankingPosition200 = {
 };
 
 
-
 /**
  * @summary Subscribe to event
  */
 export const getSubscribeToEventUrl = () => {
-
-
   return `http://localhost:3333/subscriptions`
 }
 
@@ -67,15 +64,13 @@ export const subscribeToEvent = async (subscribeToEventBody: SubscribeToEventBod
     ...options,
     method: 'POST',
     headers: { 'Content-Type': 'application/json', ...options?.headers },
-    body: JSON.stringify(
-      subscribeToEventBody,)
-  }
-)
+    body: JSON.stringify(subscribeToEventBody)
+  });
 
-  const body = [204, 205, 304].includes(res.status) ? null : await res.text()
-  const data: SubscribeToEvent201 = body ? JSON.parse(body) : {}
+  const body = [204, 205, 304].includes(res.status) ? null : await res.text();
+  const data: SubscribeToEvent201 = body ? JSON.parse(body) : {};
 
-  return data
+  return data;
 }
 
 
@@ -83,9 +78,7 @@ export const subscribeToEvent = async (subscribeToEventBody: SubscribeToEventBod
 /**
  * @summary Access invite link
  */
-export const getAccessInviteLinkUrl = (subscriberId: string,) => {
-
-
+export const getAccessInviteLinkUrl = (subscriberId: string) => {
   return `http://localhost:3333/invites/${subscriberId}`
 }
 
@@ -95,15 +88,12 @@ export const accessInviteLink = async (subscriberId: string, options?: RequestIn
   {      
     ...options,
     method: 'GET'
-    
-    
-  }
-)
+  });
 
-  const body = [204, 205, 304].includes(res.status) ? null : await res.text()
-  const data: unknown = body ? JSON.parse(body) : {}
+  const body = [204, 205, 304].includes(res.status) ? null : await res.text();
+  const data: unknown = body ? JSON.parse(body) : {};
 
-  return data
+  return data;
 }
 
 
@@ -112,26 +102,21 @@ export const accessInviteLink = async (subscriberId: string, options?: RequestIn
  * @summary Get ranking
  */
 export const getGetRankingUrl = () => {
-
-
   return `http://localhost:3333/ranking`
 }
 
-export const getRanking = async ( options?: RequestInit): Promise<GetRanking200> => {
+export const getRanking = async (options?: RequestInit): Promise<GetRanking200> => {
   
   const res = await fetch(getGetRankingUrl(),
   {      
     ...options,
     method: 'GET'
-    
-    
-  }
-)
+  });
 
-  const body = [204, 205, 304].includes(res.status) ? null : await res.text()
-  const data: GetRanking200 = body ? JSON.parse(body) : {}
+  const body = [204, 205, 304].includes(res.status) ? null : await res.text();
+  const data: GetRanking200 = body ? JSON.parse(body) : {};
 
-  return data
+  return data;
 }
 
 
@@ -139,9 +124,7 @@ export const getRanking = async ( options?: RequestInit): Promise<GetRanking200>
 /**
  * @summary Get subscriber ranking invites count
  */
-export const getGetSubscriberInviteCountUrl = (subscriberId: string,) => {
-
-
+export const getGetSubscriberInviteCountUrl = (subscriberId: string) => {
   return `http://localhost:3333/subscribers/${subscriberId}/ranking/count`
 }
 
@@ -151,15 +134,12 @@ export const getSubscriberInviteCount = async (subscriberId: string, options?: R
   {      
     ...options,
     method: 'GET'
-    
-    
-  }
-)
+  });
 
-  const body = [204, 205, 304].includes(res.status) ? null : await res.text()
-  const data: GetSubscriberInviteCount200 = body ? JSON.parse(body) : {}
+  const body = [204, 205, 304].includes(res.status) ? null : await res.text();
+  const data: GetSubscriberInviteCount200 = body ? JSON.parse(body) : {};
 
-  return data
+  return data;
 }
 
 
@@ -167,9 +147,7 @@ export const getSubscriberInviteCount = async (subscriberId: string, options?: R
 /**
  * @summary Get subscriber ranking invites clicks count
  */
-export const getGetSubscriberInviteClicksUrl = (subscriberId: string,) => {
-
-
+export const getGetSubscriberInviteClicksUrl = (subscriberId: string) => {
   return `http://localhost:3333/subscribers/${subscriberId}/ranking/clicks`
 }
 
@@ -179,15 +157,12 @@ export const getSubscriberInviteClicks = async (subscriberId: string, options?: 
   {      
     ...options,
     method: 'GET'
-    
-    
-  }
-)
+  });
 
-  const body = [204, 205, 304].includes(res.status) ? null : await res.text()
-  const data: GetSubscriberInviteClicks200 = body ? JSON.parse(body) : {}
+  const body = [204, 205, 304].includes(res.status) ? null : await res.text();
+  const data: GetSubscriberInviteClicks200 = body ? JSON.parse(body) : {};
 
-  return data
+  return data;
 }
 
 
@@ -195,9 +170,7 @@ export const getSubscriberInviteClicks = async (subscriberId: string, options?: 
 /**
  * @summary Get subscriber ranking position
  */
-export const getGetSubscriberRankingPositionUrl = (subscriberId: string,) => {
-
-
+export const getGetSubscriberRankingPositionUrl = (subscriberId: string) => {
   return `http://localhost:3333/subscribers/${subscriberId}/ranking/position`
 }
 
@@ -207,16 +180,10 @@ export const getSubscriberRankingPosition = async (subscriberId: string, options
   {      
     ...options,
     method: 'GET'
-    
-    
-  }
-)
+  });
 
-  const body = [204, 205, 304].includes(res.status) ? null : await res.text()
-  const data: GetSubscriberRankingPosition200 = body ? JSON.parse(body) : {}
+  const body = [204, 205, 304].includes(res.status) ? null : await res.text();
+  const data: GetSubscriberRankingPosition200 = body ? JSON.parse(body) : {};
 
-  return data
+  return data;
 }
-
-
-
