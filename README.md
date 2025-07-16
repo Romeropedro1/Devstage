@@ -21,7 +21,7 @@ Este projeto é uma landing page de inscrição para o evento **CodeCraft Summit
 
 ```bash
 # Clone o repositório
-git clone https://github.com/Romeropedro1/Devstag.git
+git clone https://github.com/Romeropedro1/Devstage.git
 cd nome-do-projeto
 
 # Instale as dependências
